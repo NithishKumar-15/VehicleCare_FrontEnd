@@ -21,15 +21,15 @@ export const Login = () => {
              <form action="post">
             <div className='mb-3'>
               <label htmlFor='emailName' className='form-label'>Email</label>
-              <input type={"email"} className="form-control form-control-lg" id='emailName' placeholder='Email'></input>
+              <input type={"email"} className="form-control form-control-lg" id='emailName' placeholder='Email' />
             </div>
 
             <div className='mb-3'>
               <label htmlFor='password' className='form-label'>Password</label>
-              <input type={"password"} className="form-control form-control-lg" id='password' placeholder='Password'></input>
+              <input type={"password"} className="form-control form-control-lg" id='password' placeholder='Password' />
             </div>
 
-            <div className='mb-3  text-center '>
+            <div className='mb-3  text-center'>
             <label className='form-text text-danger'>Invalid Email or Password</label>
             </div>
 
@@ -37,10 +37,9 @@ export const Login = () => {
             </form> 
             <h5 className='text-center text-body'>or</h5>
             <div className='d-flex'>
-            <Link to="" className='text-body-secondary m-auto'>Create New Account</Link>
-            <Link to="" className='text-center text-body-secondary m-auto'>Forgot Password</Link>
+            <Link to="/NewAccount" className='text-body-secondary m-auto loglink'>Create New Account</Link>
+            <Link to="" className='text-center text-body-secondary m-auto loglink'>Forgot Password</Link>
             </div>
-
         </div>
 
         </div>
