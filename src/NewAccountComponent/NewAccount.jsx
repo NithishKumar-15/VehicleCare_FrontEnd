@@ -1,8 +1,6 @@
-import React from 'react'
 import "./newAccount.css"
 import {Link} from 'react-router-dom'
-import { useRef } from 'react'
-import { useState } from 'react'
+import { useRef,useState,React } from 'react'
 
 export const NewAccount = () => {
 
