@@ -1,4 +1,6 @@
-/* rgb(247,248,250) */
+*{
+    font-family: 'open sans', arial, "helvetica neue",'sans-seri';
+}
 .servicelist{
     height: 100vh;
     font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -24,14 +26,6 @@ hr{
     border-radius: 60px;
 }
 
-/* select.option{
-    font-size: larger;
-    font-weight: lighter !important;
-    background-color: rgb(33,37,41);
-    color: white;
-    border-radius: 10px;
-} */
-
 .filter{
     font-size: larger;
     font-weight: lighter !important;
@@ -39,4 +33,20 @@ hr{
 
 p{
     text-align: justify;
+}
+
+
+/* Appoiment bookin for vehicle */
+
+#formcontentAP{
+    background-color: rgb(229,229,229);
+}
+
+#containerAP{
+    height:100vh;
+}
+
+.trackAP{
+    width: fit-content;
+    height: fit-content
 }
