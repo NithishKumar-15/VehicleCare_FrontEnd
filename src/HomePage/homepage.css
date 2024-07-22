@@ -1,5 +1,42 @@
-.col{
-    width:70px;
-    height: 80px;
-    background-color: plum;
+/* rgb(247,248,250) */
+.servicelist{
+    height: 100vh;
+    font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.items{
+    /* box-shadow: 5px 5px;
+    border-radius:10px; */
+    height:fit-content;
+    background-color:rgb(247,248,250);
+    line-height: 1.2rem;
+}
+hr{
+    margin: 0;
+}
+
+
+.selhome{
+    font-size: larger;
+    font-weight: lighter !important;
+    background-color: rgb(33,37,41);
+    color: white;
+    border-radius: 60px;
+}
+
+/* select.option{
+    font-size: larger;
+    font-weight: lighter !important;
+    background-color: rgb(33,37,41);
+    color: white;
+    border-radius: 10px;
+} */
+
+.filter{
+    font-size: larger;
+    font-weight: lighter !important;
+}
+
+p{
+    text-align: justify;
 }

@@ -11,7 +11,7 @@ export const Login = () => {
     <div id='loginpage' className='d-flex flex-column'>
       <div className='row m-auto w-50 h-75 overflow-hidden' id='loginConetntDiv'>
         <div className='col'>
-        <img src="./images/mechanicPhoto.jpg" className='img-fluid h-100'></img>
+        <img src="./images/mechanicPhoto.jpg" className='img-fluid h-100' loading='lazy'></img>
         </div>
           
         <div className='col-sm d-flex flex-column'>
@@ -21,12 +21,12 @@ export const Login = () => {
              <form action="post">
             <div className='mb-3'>
               <label htmlFor='emailName' className='form-label'>Email</label>
-              <input type={"email"} className="form-control form-control-lg" id='emailName' placeholder='Email' />
+              <input type={"email"} className="form-control form-control-lg" id='emailName' placeholder='Email'ref={email} />
             </div>
 
             <div className='mb-3'>
               <label htmlFor='password' className='form-label'>Password</label>
-              <input type={"password"} className="form-control form-control-lg" id='password' placeholder='Password' />
+              <input type={"password"} className="form-control form-control-lg" id='password' placeholder='Password' ref={password}/>
             </div>
 
             <div className='mb-3  text-center'>
