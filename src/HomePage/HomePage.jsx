@@ -18,7 +18,7 @@ export const HomePage = () => {
                   <Link className='nav-link active'>Home</Link>
                 </li>
                 <li className='navbar-item'>
-                  <Link className='nav-link'>Appoiment Booking</Link>
+                  <Link className='nav-link'>Appointment Booking</Link>
                 </li>
                 <li className='navbar-item'>
                   <Link className='nav-link'>Previous History</Link>
@@ -326,7 +326,7 @@ export const HomePage = () => {
       <div  className='container-fluid d-flex flex-column' id='containerAP'>
 
         <div className='m-auto w-50 h-75 rounded'>
-          <h3 className='bg-dark text-white text-center m-0'>Appoiment Booking</h3>
+          <h3 className='bg-dark text-white text-center m-0'>Appointment Booking</h3>
           <div className='w-100 h-100 d-flex flex-column' id='formcontentAP'>
 
               <div className='w-75 h-50 m-auto'>
@@ -377,7 +377,7 @@ export const HomePage = () => {
                           </select>
                       </div>     
                   </div>
-                  <button className='btn bg-dark text-white d-flex mx-auto'>Book Appoimnet</button>
+                  <button className='btn bg-dark text-white d-flex mx-auto'>Book Appointment</button>
                   </form>
               </div>
 
@@ -445,7 +445,7 @@ export const HomePage = () => {
                 <option>5</option>
               </select>             
              </div>
-             <button className='btn bg-dark text-white d-flex mx-auto mb-3'>Book Appoimnet</button>
+             <button className='btn bg-dark text-white d-flex mx-auto mb-3'>Submit</button>
             </form>
             </div>
 
