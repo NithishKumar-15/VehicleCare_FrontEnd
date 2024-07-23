@@ -411,13 +411,63 @@ export const HomePage = () => {
               </div>
 
           </div>
-          <div className='d-flex justify-content-center'>
-            <span className='h4'>Amount :</span>
-            <span className='h4 ms-2'>0$</span>
+          <div className='d-flex justify-content-between px-3 mb-3'>
+            <span className='h4'>Amount : 0 ₹</span>
+           <button className='btn bg-dark text-white' disabled>Pay</button>
           </div>
+        </div>
+        <br></br>
 
+        <div className='mb-3'>
+          <div className='w-25 h-25 mx-auto border'>
+            <h5 className='text-center bg-dark text-white'>FeedBack Form</h5>
+
+            <div className='w-75 h-75 mx-auto'>
+            <form action="post">
+              <div className='mb-3'>
+              <label className='form-label' htmlFor='userName'>User Name</label>
+              <input type={"text"} className="form-control" id='userName'></input>
+              </div>
+
+              <div className='mb-3'>
+              <label className='form-label' htmlFor='feedback'>Your FeedBack</label>
+              <textarea type={"text"} className="form-control" id='feedback' rows={'3'}/>
+              </div>
+              
+              <div className='mb-3'>
+              <label className='form-label' htmlFor='rating'>Your Rating</label>
+              <select className="form-control" id='rating' >
+                <option disabled>Your Rating from 1 t0 5</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>             
+             </div>
+             <button className='btn bg-dark text-white d-flex mx-auto mb-3'>Book Appoimnet</button>
+            </form>
+            </div>
+
+          </div>
         </div>
 
+      <div className='w-50 h-25 mx-auto d-flex justify-content-between border rounded p-3'>
+        <div>
+          <span className='h5' style={{color:"rgb(85,90,150)"}}>Nithish kumar</span>
+          <p className='ms-1 text-secondary'>(TN-05-BQ-0240)- General Service</p>
+        </div>
+        <div className='text-secondary'>
+          <h6>Serviced on 03/04/2024</h6>
+          <div className='d-flex'>
+          <span>Rating</span>
+          <div className='border border-dark text-center ms-3 m-0' style={{width:"30px"}}>5</div>
+          </div>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
     </>
   )
 }
