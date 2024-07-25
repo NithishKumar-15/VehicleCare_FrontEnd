@@ -1,9 +1,11 @@
 import "./newAccount.css"
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import { useRef,useState,React } from 'react'
+import instance from "../AxiosInstance/axiosinstance.js"
 
 export const NewAccount = () => {
 
+  const navigate=useNavigate();
   const name=useRef(null);
   const email=useRef("");
   const password=useRef("");
@@ -11,7 +13,7 @@ export const NewAccount = () => {
   
   const[message, setMessage]=useState("");
 
-  const createAccount=(e)=>{
+  const createAccount=async(e)=>{
     e.preventDefault();
     if(message!=""){
       setMessage("");
@@ -19,10 +21,24 @@ export const NewAccount = () => {
 
     if(name.current.value!="" && email.current.value!="" &&password.current.value!="" && confirmPassword.current.value!=""){
       if(password.current.value===confirmPassword.current.value){
-        name.current.value="";
-        email.current.value="";
-        password.current.value="";
-        confirmPassword.current.value="";
+
+            const data={
+              name:name.current.value,
+              email:email.current.value,
+              password:password.current.value
+            }
+
+            await instance.post("Users/Create",data).then((res)=>{
+              if(res.data.message==="Email Id already exist"){
+                setMessage(res.data.message);
+              }else{
+                alert('User Created')
+                name.current.value="";
+                email.current.value="";
+                password.current.value="";
+                confirmPassword.current.value="";
+              }
+            })
       }else{
         setMessage("Password Miss Match")
       }

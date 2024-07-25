@@ -10,7 +10,7 @@ export const Routing = () => {
     <Routes>
     <Route path='/' element={<Login></Login>}></Route>
     <Route path='/NewAccount' element={<NewAccount></NewAccount>}></Route>
-    <Route path='/Home' element={<HomePage></HomePage>}></Route>
+    <Route path='/Home/:id' element={<HomePage></HomePage>}></Route>
     </Routes>
     </BrowserRouter>
   )
