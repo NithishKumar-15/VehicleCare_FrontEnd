@@ -1,12 +1,34 @@
-import { React,useState } from 'react'
+import { React,useState,useEffect} from 'react'
 import {ServiceAndRatings} from "./ServiceAndRatings"
 import {AppoimentBooking} from "./AppoimentBooking"
 import {PrevoiusHistory} from "./PrevoiusHistory"
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { useDispatch, useSelector} from 'react-redux'
+import instance from '../AxiosInstance/axiosinstance'
+import {jwtDecode} from 'jwt-decode';
 import "./homepage.css"
 
 
 export const HomePage = () => {
+  
+  const {token}=useParams()
+  const allServiceDetails=useSelector((state)=>state.serviceDetailsReducer);
+  const dispatch=useDispatch();
+
+  // console.log(allServiceDetails)
+  
+// async function verifyToken(){
+//   await instance.post("Users/verifyToken",token).then((res)=>{
+//     console.log("jh");
+//   })
+// }
+
+  // useEffect(()=>{
+  //   const decoded = jwtDecode(token);
+  //   if(decoded){
+  //     console.log(decoded.email)
+  //   }
+  // },[])
 
   const [pages,setPages]=useState("Home");
 
@@ -49,17 +71,12 @@ export const HomePage = () => {
         </nav>
       </header>
 
-      {pages==="Home"&&<ServiceAndRatings />}
+      {pages==="Home"&&<ServiceAndRatings allServiceDetails={allServiceDetails}/>}
       {/* Appoiment Booking */}
       {pages==="Appointment"&&<AppoimentBooking/>}
       {/* Previous History */}
       {pages==="PreviousHistory"&&<PrevoiusHistory/>}
       
-        <br></br>
-
-   
-    
-
       <br></br>
       <br></br>
       <br></br>

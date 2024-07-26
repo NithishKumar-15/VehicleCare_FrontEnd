@@ -1,6 +1,10 @@
 import React from 'react'
 
-export const ServiceAndRatings = () => {
+export const ServiceAndRatings = ({allServiceDetails}) => {
+
+  allServiceDetails.map((val)=>{
+    console.log(val);
+  })
   return (
     <div className='container-fluid servicelist'>
     <div className='container mt-5'>
@@ -38,103 +42,21 @@ export const ServiceAndRatings = () => {
     </div>
     
     <div className='row mt-5'>
-        <div className='col-lg-4 col-auto mb-3'>
+       {allServiceDetails.map((val)=>(<div className='col-lg-4 col-auto mb-3' key={val.ServiceName}>
             <div className='w-75 border rounded items mx-auto'>
-              <h4  className='bg-dark text-white m-0 rounded-top'>General Service</h4>
+              <h6  className='bg-dark text-white m-0 rounded-top'>{val.ServiceName}</h6>
               <hr></hr>
-              <div className='p-3'>
+              <div className='p-3 h-75'>
               <h6>Service Details:</h6>
-              <p className='text-justify'>Engine Oil check & top up Oil Wuerth for twins park engine, Motul 7100 for Himalayan, 650 twins ) Air Filter Cleaning. Chain Clean and Chain Lube [German Brand Lube only] General Maintenance of clutch and brakes. Chain Tightening.</p>
+              <p className='text-justify h-50 overflow-hidden'>{val.ServiceDetails}</p>
               </div>
               <hr></hr>
               <div className='d-flex justify-content-between p-3'>
                 <span>Price:</span>
-                <span>480$</span>
+                <span>{val.Price}₹</span>
               </div>
             </div>
-        </div>
-
-        <div className='col-lg-4 col-auto mb-3'>
-            <div className='w-75 border rounded items mx-auto'>
-              <h4 className='bg-dark text-white m-0 rounded-top'>General Service</h4>
-              <hr></hr>
-              <div className='p-3'>
-              <h6>Service Details:</h6>
-              <p className='text-justify'>Engine Oil check & top up Oil Wuerth for twins park engine, Motul 7100 for Himalayan, 650 twins ) Air Filter Cleaning. Chain Clean and Chain Lube [German Brand Lube only] General Maintenance of clutch and brakes. Chain Tightening.</p>
-              </div>
-              <hr></hr>
-              <div className='d-flex justify-content-between p-3'>
-                <span>Price:</span>
-                <span>480$</span>
-              </div>
-            </div>
-        </div>
-
-        <div className='col-lg-4 col-auto mb-3'>
-            <div className='w-75 border rounded items mx-auto'>
-              <h4 className='bg-dark text-white m-0 rounded-top'>General Service</h4>
-              <hr></hr>
-              <div className='p-3'>
-              <h6>Service Details:</h6>
-              <p className='text-justify'>Engine Oil check & top up Oil Wuerth for twins park engine, Motul 7100 for Himalayan, 650 twins ) Air Filter Cleaning. Chain Clean and Chain Lube [German Brand Lube only] General Maintenance of clutch and brakes. Chain Tightening.</p>
-              </div>
-              <hr></hr>
-              <div className='d-flex justify-content-between p-3'>
-                <span>Price:</span>
-                <span>480$</span>
-              </div>
-            </div>
-        </div>
-
-        <div className='col-lg-4 col-auto mb-3'>
-            <div className='w-75 border rounded items mx-auto'>
-              <h4 className='bg-dark text-white m-0 rounded-top'>General Service</h4>
-              <hr></hr>
-              <div className='p-3'>
-              <h6>Service Details:</h6>
-              <p className='text-justify'>Engine Oil check & top up Oil Wuerth for twins park engine, Motul 7100 for Himalayan, 650 twins ) Air Filter Cleaning. Chain Clean and Chain Lube [German Brand Lube only] General Maintenance of clutch and brakes. Chain Tightening.</p>
-              </div>
-              <hr></hr>
-              <div className='d-flex justify-content-between p-3'>
-                <span>Price:</span>
-                <span>480$</span>
-              </div>
-            </div>
-        </div>
-
-        <div className='col-lg-4 col-auto mb-3'>
-            <div className='w-75 border rounded items mx-auto'>
-              <h4 className='bg-dark text-white m-0 rounded-top'>General Service</h4>
-              <hr></hr>
-              <div className='p-3'>
-              <h6>Service Details:</h6>
-              <p className='text-justify'>Engine Oil check & top up Oil Wuerth for twins park engine, Motul 7100 for Himalayan, 650 twins ) Air Filter Cleaning. Chain Clean and Chain Lube [German Brand Lube only] General Maintenance of clutch and brakes. Chain Tightening.</p>
-              </div>
-              <hr></hr>
-              <div className='d-flex justify-content-between p-3'>
-                <span>Price:</span>
-                <span>480$</span>
-              </div>
-            </div>
-        </div>
-
-        <div className='col-lg-4 col-auto mb-3'>
-            <div className='w-75 border rounded items mx-auto'>
-              <h4 className='bg-dark text-white m-0 rounded-top'>General Service</h4>
-              <hr></hr>
-              <div className='p-3'>
-              <h6>Service Details:</h6>
-              <p className='text-justify'>Engine Oil check & top up Oil Wuerth for twins park engine, Motul 7100 for Himalayan, 650 twins ) Air Filter Cleaning. Chain Clean and Chain Lube [German Brand Lube only] General Maintenance of clutch and brakes. Chain Tightening.</p>
-              </div>
-              <hr></hr>
-              <div className='d-flex justify-content-between p-3'>
-                <span>Price:</span>
-                <span>480$</span>
-              </div>
-            </div>
-        </div>
-        
-        
+        </div>))}
 
     </div>
 
