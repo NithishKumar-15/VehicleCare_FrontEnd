@@ -2,10 +2,9 @@ import { React,useState,useEffect} from 'react'
 import {ServiceAndRatings} from "./ServiceAndRatings"
 import {AppoimentBooking} from "./AppoimentBooking"
 import {PrevoiusHistory} from "./PrevoiusHistory"
-import { Link, useParams } from 'react-router-dom'
-import { useDispatch, useSelector} from 'react-redux'
+import { Link, useParams ,useNavigate} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 import instance from '../AxiosInstance/axiosinstance'
-import {jwtDecode} from 'jwt-decode';
 import "./homepage.css"
 
 
@@ -13,22 +12,25 @@ export const HomePage = () => {
   
   const {token}=useParams()
   const allServiceDetails=useSelector((state)=>state.serviceDetailsReducer);
-  const dispatch=useDispatch();
+  const feedBacks=useSelector((state)=>state.ratings);
+  console.log(feedBacks);
+  const navigate=useNavigate();
 
-  // console.log(allServiceDetails)
   
-// async function verifyToken(){
-//   await instance.post("Users/verifyToken",token).then((res)=>{
-//     console.log("jh");
-//   })
-// }
+  useEffect(()=>{
+    async function verifyToken(){
+      try{
+     await instance.post('Users/verifyToken',{token:token}).then((res)=>{
+      
+    })
+    }catch(e){
+      console.log("err")
+      navigate("/")
+    }
+  }
+  verifyToken();
+  },[])
 
-  // useEffect(()=>{
-  //   const decoded = jwtDecode(token);
-  //   if(decoded){
-  //     console.log(decoded.email)
-  //   }
-  // },[])
 
   const [pages,setPages]=useState("Home");
 
@@ -71,7 +73,7 @@ export const HomePage = () => {
         </nav>
       </header>
 
-      {pages==="Home"&&<ServiceAndRatings allServiceDetails={allServiceDetails}/>}
+      {pages==="Home"&&<ServiceAndRatings allServiceDetails={allServiceDetails} feedBacks={feedBacks}/>}
       {/* Appoiment Booking */}
       {pages==="Appointment"&&<AppoimentBooking/>}
       {/* Previous History */}

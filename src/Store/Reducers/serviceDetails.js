@@ -6,6 +6,7 @@ await instance.get("ServiceDetails/AllServiceDetails").then((res)=>{
     allServiceDetails=[...res.data]
 })
 
+
 function serviceDetailsReducer(state=allServiceDetails,action,data){
     if(action.type==="AddData"){
         return [...data]
